@@ -58,7 +58,7 @@ export default function HomePage() {
       }
 
       // Fixed: Changed from /auth/user to /auth/me to match backend
-      const response = await fetch(`${API_BASE_URL}/auth/user`, {
+      const response = await fetch(`${API_BASE_URL}/api/auth/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ export default function HomePage() {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/posts`)
+      const response = await fetch(`${API_BASE_URL}/api/posts`)
       if (response.ok) {
         const postsData = await response.json()
         setPosts(postsData)
@@ -106,7 +106,7 @@ export default function HomePage() {
         formData.append("image", selectedImage)
       }
 
-      const response = await fetch(`${API_BASE_URL}/posts`, {
+      const response = await fetch(`${API_BASE_URL}/api/posts`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,

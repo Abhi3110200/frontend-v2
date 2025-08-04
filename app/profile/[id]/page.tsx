@@ -55,11 +55,11 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem("token")
       if (!token) {
-        router.push("/login")
+        router.push("/api/login")
         return
       }
 
-      const response = await fetch(`${API_BASE_URL}/auth/user`, {
+      const response = await fetch(`${API_BASE_URL}/api/auth/user`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -70,17 +70,17 @@ export default function ProfilePage() {
         setCurrentUser(userData)
       } else {
         localStorage.removeItem("token")
-        router.push("/login")
+        router.push("/api/login")
       }
     } catch (error) {
       console.error("Auth check failed:", error)
-      router.push("/login")
+      router.push("/api/login")
     }
   }
 
   const fetchProfile = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/users/${userId}`)
+      const response = await fetch(`${API_BASE_URL}/api/users/${userId}`)
       if (response.ok) {
         const userData = await response.json()
         setProfile(userData)
@@ -95,7 +95,7 @@ export default function ProfilePage() {
 
   const fetchUserPosts = async () => {
     try {
-      const response = await fetch(`${API_BASE_URL}/posts/user/${userId}`)
+      const response = await fetch(`${API_BASE_URL}/api/posts/user/${userId}`)
       if (response.ok) {
         const postsData = await response.json()
         setPosts(postsData)
@@ -123,7 +123,7 @@ export default function ProfilePage() {
       const formData = new FormData()
       formData.append("profilePicture", file)
 
-      const response = await fetch(`${API_BASE_URL}/users/profile-picture`, {
+      const response = await fetch(`${API_BASE_URL}/api/users/profile-picture`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -154,7 +154,7 @@ export default function ProfilePage() {
     setDeletingPicture(true)
     try {
       const token = localStorage.getItem("token")
-      const response = await fetch(`${API_BASE_URL}/users/profile-picture`, {
+      const response = await fetch(`${API_BASE_URL}/api/users/profile-picture`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
