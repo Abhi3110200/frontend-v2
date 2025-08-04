@@ -55,7 +55,7 @@ export default function ProfilePage() {
     try {
       const token = localStorage.getItem("token")
       if (!token) {
-        router.push("/api/login")
+        router.push("/login")
         return
       }
 
@@ -70,11 +70,11 @@ export default function ProfilePage() {
         setCurrentUser(userData)
       } else {
         localStorage.removeItem("token")
-        router.push("/api/login")
+        router.push("/login")
       }
     } catch (error) {
       console.error("Auth check failed:", error)
-      router.push("/api/login")
+      router.push("/login")
     }
   }
 
