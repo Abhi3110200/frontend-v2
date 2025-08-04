@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 Mini-LinkedIn Community Platform
 
-## Getting Started
+A full-stack professional networking platform built with modern web technologies, featuring real-time interactions, cloud-based image storage, and responsive design.
 
-First, run the development server:
+## 🚀 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+**🔗 [Live Demo URL](https://frontend-v2-lyart-ten.vercel.app/login)**
+
+**👤 Demo Account:**
+- **Email:** `abhijeet@gmail.com`
+- **Password:** `12345678`
+
+## 📱 Features
+
+### ✨ Core Features
+- 🔐 **User Authentication** - Secure JWT-based login/registration
+- 👤 **User Profiles** - Customizable profiles with bio and profile pictures
+- 📝 **Post Creation** - Create posts with text and images
+- 🖼️ **Image Upload** - Cloud-based image storage with Cloudinary
+- 📱 **Responsive Design** - Mobile-first design for all devices
+- 🗑️ **Post Management** - Delete your own posts
+- 👥 **Community Feed** - View all community posts in real-time
+
+### 🎯 Advanced Features
+- ☁️ **Cloud Storage** - Automatic image optimization and CDN delivery
+- 🎨 **Smart Image Processing** - Auto-cropping, compression, and format conversion
+- 📱 **Mobile Optimized** - Touch-friendly interface with proper tap targets
+- 🔒 **Security** - Rate limiting, CORS protection, and input validation
+- ⚡ **Performance** - Optimized loading and caching strategies
+- 🎭 **User Experience** - Smooth animations and intuitive navigation
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **⚛️ Next.js 14** - React framework with App Router
+- **📘 TypeScript** - Type-safe development
+- **🎨 Tailwind CSS** - Utility-first CSS framework
+- **🧩 shadcn/ui** - Modern UI component library
+- **🖼️ Next.js Image** - Optimized image handling
+- **🔥 React Hot Toast** - Beautiful notifications
+
+### DevOps & Tools
+- **🌐 Vercel** - Frontend deployment
+- **🚂 Railway/Render** - Backend deployment
+- **🔒 Helmet** - Security middleware
+- **⚡ Express Rate Limit** - API rate limiting
+- **🌍 CORS** - Cross-origin resource sharing
+
+## 📁 Project Structure
+
+```
+mini-linkedin-platform/
+├── frontend-v2/                 # Next.js React application
+│   ├── app/                 # Next.js 14 App Router
+│   │   ├── page.tsx         # Home page (feed)
+│   │   ├── login/           # Authentication pages
+│   │   ├── register/        
+│   │   └── profile/[id]/    # Dynamic profile pages
+│   ├── components/          # Reusable UI components
+│   │   └── ui/             # shadcn/ui components
+│   ├── hooks/              # Custom React hooks
+│   └── package.json        # Frontend dependencies
+├──     README.md               # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Quick Start
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. Clone Repository
+\`\`\`bash
+git clone https://github.com/Abhi3110200/frontend-v2
+cd frontend-v2
+\`\`\`
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 2. Frontend Setup
+\`\`\`bash
+npm install
 
-## Learn More
+# Create environment file (optional)
+echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
 
-To learn more about Next.js, take a look at the following resources:
+# Start development server
+npm run dev
+\`\`\`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Frontend will run on: **http://localhost:3000**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🌐 Deployment
 
-## Deploy on Vercel
+### Frontend Deployment (Vercel)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Connect to Vercel:**
+   \`\`\`bash
+   npm i -g vercel
+   vercel --prod
+   \`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+2. **Set Environment Variables:**
+   - `NEXT_PUBLIC_API_URL=http://localhost:8000`
+
+3. **Auto-deploy:** Pushes to main branch deploy automatically
+
+### Authentication Endpoints
+```http
+POST /api/auth/register    # User registration
+POST /api/auth/login       # User login
+GET  /api/auth/user        # Get current user
+
