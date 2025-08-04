@@ -48,7 +48,7 @@ A full-stack professional networking platform built with modern web technologies
 
 ## 📁 Project Structure
 
-```
+```bash
 mini-linkedin-platform/
 ├── frontend-v2/                 # Next.js React application
 │   ├── app/                 # Next.js 14 App Router
@@ -66,13 +66,13 @@ mini-linkedin-platform/
 ## 🚀 Quick Start
 
 ### 1. Clone Repository
-\`\`\`bash
+```bash
 git clone https://github.com/Abhi3110200/frontend-v2
 cd frontend-v2
-\`\`\`
+```
 
 ### 2. Frontend Setup
-\`\`\`bash
+```bash
 npm install
 
 # Create environment file (optional)
@@ -80,7 +80,7 @@ echo "NEXT_PUBLIC_API_URL=http://localhost:8000" > .env.local
 
 # Start development server
 npm run dev
-\`\`\`
+```
 
 Frontend will run on: **http://localhost:3000**
 
@@ -88,20 +88,20 @@ Frontend will run on: **http://localhost:3000**
 
 ### Frontend Deployment (Vercel)
 
-1. **Connect to Vercel:**
-   \`\`\`bash
-   npm i -g vercel
-   vercel --prod
-   \`\`\`
-
-2. **Set Environment Variables:**
+1. **Set Environment Variables:**
    - `NEXT_PUBLIC_API_URL=http://localhost:8000`
 
-3. **Auto-deploy:** Pushes to main branch deploy automatically
+2. **Auto-deploy:** Pushes to main branch deploy automatically
 
 ### Authentication Endpoints
 ```http
 POST /api/auth/register    # User registration
 POST /api/auth/login       # User login
 GET  /api/auth/user        # Get current user
+```
+### Image Preview
 
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
